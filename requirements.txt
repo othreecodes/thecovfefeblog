@@ -1,0 +1,12 @@
+appdirs==1.4.2
+beautifulsoup4==4.6.0
+bs4==0.0.1
+Django==1.10.6
+django-jet==1.0.6
+gunicorn==19.7.1
+olefile==0.44
+packaging==16.8
+Pillow==4.1.1
+pyparsing==2.2.0
+six==1.10.0
+whitenoise==3.3.0
