@@ -20,9 +20,11 @@
 
     <!-- Custom Fonts -->
     <link href="{% static 'blog/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    {% block styles %}{% endblock %}
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -36,75 +38,76 @@
 
 {% include 'blog/nav.html' %}
 
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url({% block bg %}{% endblock %})">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>{% block heading %}{% endblock %}</h1>
-                        <hr class="small">
-                        <span class="subheading">{% block sub %}{% endblock %}</span>
-                    </div>
+<!-- Set your background image for this header on the line below. -->
+<header class="intro-header" style="background-image: url({% block bg %}{% endblock %})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{% block heading %}{% endblock %}</h1>
+                    <hr class="small">
+                    <span class="subheading">{% block sub %}{% endblock %}</span>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    {% block main %}
+{% block main %}
 
-    {% endblock %}
-    <hr>
+{% endblock %}
+<hr>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="#">
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    <li>
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="http://github.com/othreecodes/thecovfefeblog">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/othreecodes/thecovfefeblog">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
                                 </span>
-                            </a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Covfefe 2017</p>
-                </div>
+                        </a>
+                    </li>
+                </ul>
+                <p class="copyright text-muted">Copyright &copy; Covfefe 2017</p>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 
-    <!-- jQuery -->
-    <script src="{% static 'blog/vendor/jquery/jquery.min.js' %}"></script>
+<!-- jQuery -->
+<script src="{% static 'blog/vendor/jquery/jquery.min.js' %}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static 'blog/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static 'blog/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="{% static 'blog/js/jqBootstrapValidation.js' %}"></script>
+<!-- Contact Form JavaScript -->
+<script src="{% static 'blog/js/jqBootstrapValidation.js' %}"></script>
 
-    <!-- Theme JavaScript -->
-    <script src="{% static 'blog/js/clean-blog.min.js' %}"></script>
+<!-- Theme JavaScript -->
+<script src="{% static 'blog/js/clean-blog.min.js' %}"></script>
 
+{% block script %}{% endblock %}
 </body>
 
 </html>

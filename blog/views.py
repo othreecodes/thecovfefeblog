@@ -69,3 +69,26 @@ class LogoutView(View):
     def get(self, request):
         logout(request)
         return reverse('blog:index')
+
+
+from django.template.defaultfilters import slugify
+
+from covfefe import convert
+
+
+class NewPostView(View):
+    def get(self, request):
+        return render(request, 'blog/new-post.html')
+
+    def post(self, request):
+        title = request.POST.get('title') or None
+        image = request.POST.get('image') or None
+        body = request.POST.get('body') or None
+
+        slug = slugify(title)
+        body = convert(body)
+        post = Post(title=title, image=image, body=body, slug=slug,author=request.user)
+
+        post.save()
+
+        return HttpResponseRedirect('/')

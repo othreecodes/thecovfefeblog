@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+
+{% block heading %}thecovfefe blog{% endblock %}
+{% block sub %}New Post{% endblock %}
+{% block styles %}
+    <!-- Include Editor style. -->
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.1/css/froala_editor.min.css' rel='stylesheet'
+          type='text/css'/>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.1/css/froala_style.min.css' rel='stylesheet'
+          type='text/css'/>
+
+{% endblock %}
+{% block bg %}https://blackrockdigital.github.io/startbootstrap-clean-blog/img/home-bg.jpg{% endblock %}
+{% block main %}
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <input type="text" id="inputPassword" class="form-control" name="title"
+                           placeholder="Title"
+                           required>
+                    <br>
+                    <input type="text" id="inputPassword" class="form-control" name="image"
+                           placeholder="Image Url"
+                           required>
+                    <br>
+                    <textarea name="body"></textarea>
+                    <br>
+                    <button class="btn btn-sm btn-primary btn-block btn-signin" type="submit">POST</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script type='text/javascript'
+            src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.6.1/js/froala_editor.min.js'></script>
+
+    <script> $(function () {
+        $('textarea').froalaEditor({})
+    }); </script>
+{% endblock %}
