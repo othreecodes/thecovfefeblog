@@ -1,0 +1,6 @@
+[program:hello]
+command = /webapps/hello_django/bin/gunicorn_start                    ; Command to start app
+user = hello                                                          ; User to run as
+stdout_logfile = /webapps/hello_django/logs/gunicorn_supervisor.log   ; Where to write log messages
+redirect_stderr = true                                                ; Save stderr in the same log
+environment=LANG=en_US.UTF-8,LC_ALL=en_US.UTF-8                       ; Set UTF-8 as default encoding
