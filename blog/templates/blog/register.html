@@ -1,0 +1,30 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block heading %}Register for TheCovfefe{% endblock %}
+{% block sub %}Join Us!!!!!1{% endblock %}
+{% block bg %}{% static 'blog/img/about-bg.jpg' %}{% endblock %}
+{% block main %}
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <p>Register and start posting</p>
+                <form name="sentMessage" id="contactForm" method="post">
+                    {% csrf_token %}
+
+                    {% include 'blog/form_template.html' %}
+
+                    <br>
+                    <br>
+
+                    <button class="btn btn-sm btn-primary btn-block btn-signin" type="submit">Register</button>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+{% endblock %}

@@ -22,9 +22,26 @@
                 <li>
                     <a href="{% url 'blog:contact' %}">Contact</a>
                 </li>
-                  <li>
+
+                <li>
                     <a href="/admin/">Admin</a>
                 </li>
+                {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="{% url 'blog:new-post' %}">New Post</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-user"></span> {{ request.user.username }}</a>
+                    </li>
+
+                {% else %}
+                    <li>
+                        <a href="{% url 'blog:login' %}">Login</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'blog:register' %}">Register</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
         <!-- /.navbar-collapse -->
