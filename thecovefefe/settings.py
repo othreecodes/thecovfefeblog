@@ -78,7 +78,7 @@ DEBUG = True
 
 DB_DETAILS = None
 if ENV_TYPE == 'HEROKU':
-    # DEBUG = False
+    DEBUG = False
     DB_DETAILS = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
     pass
 else:
