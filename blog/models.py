@@ -19,8 +19,11 @@ class Category(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
-        return ('category', None, {
+        return ('blog:category', None, {
             'category': self.slug
         })
     get_absolute_url = models.permalink(get_absolute_url)
@@ -54,8 +57,11 @@ class Post(models.Model):
     def __unicode__(self):
         return self.title
 
+    def __str__(self):
+        return self.title
+
     def get_absolute_url(self):
-        return ('post', None, {
+        return ('blog:post', None, {
             'year': self.publish.year,
             'month': "%02d" % self.publish.month,
             'slug': self.slug
