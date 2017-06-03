@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import dj_database_url
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Quick-start development settings - unsuitable for production
@@ -71,12 +73,22 @@ WSGI_APPLICATION = 'thecovefefe.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
+ENV_TYPE = os.environ.get('ENV_TYPE')
 DEBUG = True
-DATABASES = {
-    'default': {
+
+DB_DETAILS = None
+if ENV_TYPE == 'HEROKU':
+    # DEBUG = False
+    DB_DETAILS = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    pass
+else:
+    DB_DETAILS = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+
+DATABASES = {
+    'default': DB_DETAILS
 }
 
 # Password validation
