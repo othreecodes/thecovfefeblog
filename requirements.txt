@@ -9,6 +9,7 @@ olefile==0.44
 packaging==16.8
 Pillow==4.1.1
 psycopg2==2.7.1
+pycovfefe==0.1a0
 pyparsing==2.2.0
 six==1.10.0
 uWSGI==2.0.15
