@@ -1,5 +1,5 @@
 # thecovfefeblog
-Demo for my talk on deploying your django application at ForLoopIbadan
+Demo for my talk on deploying your django application at ForLoop Ibadan
 
 # Demo Links: 
 Heroku: http://thecovfefeblog.herokuapp.com
